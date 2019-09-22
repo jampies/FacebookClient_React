@@ -6,7 +6,9 @@
   "scripts": {
     "test": "mocha --require ./testSetup.js \"src/**/*.spec.js\"",
     "dev:start": "webpack-dev-server --open --mode development",
-    "start": "npm run dev:start"
+    "start": "npm run dev:start",
+    "ss": "semistandard --verbose | snazzy",
+    "ss:fix": "semistandard --fix"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,9 @@
   "homepage": "https://github.com/jampies/FacebookClient_TechTest#readme",
   "dependencies": {
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.0.1",
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
@@ -28,6 +32,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.6.0",
     "assert": "^2.0.0",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
     "enzyme": "^3.10.0",
@@ -38,11 +43,28 @@
     "mocha": "^6.2.0",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.0",
+    "semistandard": "^14.2.0",
+    "snazzy": "^8.0.0",
     "style-loader": "^1.0.0",
     "testdouble": "^3.12.4",
     "url-loader": "^2.1.0",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.1"
+  },
+  "semistandard": {
+    "ignore": [
+      "/node_modules"
+    ],
+    "globals": [
+      "describe",
+      "before",
+      "beforeEach",
+      "after",
+      "afterEach",
+      "it",
+      "FB"
+    ],
+    "parser": "babel-eslint"
   }
 }
