@@ -2,6 +2,13 @@ import React from 'react';
 import facebookApi from '../../services/facebookApi/facebookApi';
 import Post from '../Post/Post';
 import Loader from '../Loader/Loader';
+import styled from 'styled-components';
+
+const StyledFeedContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
 
 class Feed extends React.Component {
   constructor () {
@@ -25,9 +32,9 @@ class Feed extends React.Component {
     if (!feed) return <Loader />;
 
     return (
-      <div>
+      <StyledFeedContainer>
         {feed.map(p => <Post key={p.id} post={p} />)}
-      </div>
+      </StyledFeedContainer>
 
     );
   }

@@ -1,14 +1,7 @@
 import React from 'react';
 import facebookApi from '../../services/facebookApi/facebookApi';
 import { Redirect } from 'react-router-dom';
-import styled from 'styled-components';
-
-const FacebookButton = styled.button`
-    background-color: #456caa;
-    padding: 0.5em 1em;
-    color: #FFF;
-    cursor: pointer;
-`;
+import FacebookStyleButton from '../FacebookStyleButton/FacebookStyleButton';
 
 export class FacebookLogin extends React.Component {
   constructor () {
@@ -44,7 +37,7 @@ export class FacebookLogin extends React.Component {
 
     return (
       <div>
-        <FacebookButton onClick={this.handleClickLogin}>Login with Facebook</FacebookButton>
+        <FacebookStyleButton onClick={this.handleClickLogin}>Login with Facebook</FacebookStyleButton>
       </div>
     );
   }

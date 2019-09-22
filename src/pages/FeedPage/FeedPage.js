@@ -1,14 +1,21 @@
 import React from 'react';
-import LogoutButton from '../../components/LogoutButton/LogoutButton';
 import Feed from '../../components/Feed/Feed';
+import styled from 'styled-components';
+import NavBar from '../../components/NavBar/NavBar';
+
+const StyledFeedPage = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4em;
+`;
 
 const FeedPage = ({ history }) => {
   return (
-    <div>
-      <h1>Feed Page</h1>
-      <LogoutButton history={history} />
+    <StyledFeedPage>
+      <NavBar history={history} />
       <Feed />
-    </div>
+    </StyledFeedPage>
   );
 };
 

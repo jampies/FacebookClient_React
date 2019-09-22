@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import LoginPage from './pages/LoginPage/LoginPage';
 import FeedPage from './pages/FeedPage/FeedPage';
 import authService from './services/authService/authService';
+import './global.css';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route

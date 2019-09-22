@@ -35,15 +35,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               sourceMap: true,
-              modules: true,
-              localIdentName: '[local]___[hash:base64:5]',
               importLoaders: 1
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true
             }
           },
           {
