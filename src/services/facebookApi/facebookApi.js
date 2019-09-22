@@ -1,7 +1,7 @@
 import authService from '../authService/authService';
 import getFBApi from './getFacebookApi';
 
-const LOGIN_STATUS = {
+export const LOGIN_STATUS = {
   CONNECTED: 'connected',
   UNAUTHORISED: 'not_authorized',
   UNKNOWN: 'unknown'
@@ -18,7 +18,7 @@ export default {
           }
           resolve(isLoggedIn);
         });
-      })
+      });
     });
   },
   login: () => {

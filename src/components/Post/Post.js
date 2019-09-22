@@ -30,25 +30,25 @@ const PostContentContainer = styled.div`
 `;
 
 class Post extends React.Component {
-    constructor() {
-        super();
-        this.state = {};
-    }
+  constructor () {
+    super();
+    this.state = {};
+  }
 
-    render() {
-        const { post } = this.props;
+  render () {
+    const { post } = this.props;
 
-        return (
-            <StyledPostContainer>
-                <StyledImg src={post.full_picture} />
-                <StyledTimeSinceDate><TimeSinceDate date={post.created_time} /></StyledTimeSinceDate>
-                <PostContentContainer>
-                    <div>{post.story}</div>
-                    <div>{post.message}</div>
-                </PostContentContainer>
-            </StyledPostContainer>
-        );
-    }
+    return (
+      <StyledPostContainer>
+        <StyledImg src={post.full_picture} />
+        <StyledTimeSinceDate><TimeSinceDate date={post.created_time} /></StyledTimeSinceDate>
+        <PostContentContainer>
+          <div>{post.story}</div>
+          <div>{post.message}</div>
+        </PostContentContainer>
+      </StyledPostContainer>
+    );
+  }
 }
 
 export default Post;
