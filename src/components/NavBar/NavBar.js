@@ -14,12 +14,13 @@ const StyledNavBarContainer = styled.div`
     justify-content: space-between;
     position:fixed;
     top:0;
+    z-index: 1;
 `;
 
 const AppName = styled.span`
     font-size: 2em;
     font-weight: bold;
-    margin: 0 1em;
+    margin: 0.2em 1em;
 `;
 
 const NavControls = styled.div`

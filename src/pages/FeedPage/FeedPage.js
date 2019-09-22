@@ -7,7 +7,7 @@ const StyledFeedPage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4em;
+  margin-top: 8em;
 `;
 
 class FeedPage extends React.Component {
