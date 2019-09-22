@@ -28,12 +28,17 @@ class Feed extends React.Component {
 
   render () {
     const { feed } = this.state;
+    const { searchTerm } = this.props;
+    const lowerCaseSearchTerm = searchTerm.toLowerCase();
 
     if (!feed) return <Loader />;
 
     return (
       <StyledFeedContainer>
-        {feed.map(p => <Post key={p.id} post={p} />)}
+        {feed.filter(p => {
+          const content = `${p.created_time}${p.message}${p.story}`;
+          return content.toLowerCase().includes(lowerCaseSearchTerm);
+        }).map(p => <Post key={p.id} post={p} />)}
       </StyledFeedContainer>
 
     );

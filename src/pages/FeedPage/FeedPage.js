@@ -10,13 +10,33 @@ const StyledFeedPage = styled.div`
   margin-top: 4em;
 `;
 
-const FeedPage = ({ history }) => {
-  return (
-    <StyledFeedPage>
-      <NavBar history={history} />
-      <Feed />
-    </StyledFeedPage>
-  );
-};
+class FeedPage extends React.Component {
+  constructor () {
+    super();
+
+    this.handleSearchEdit = this.handleSearchEdit.bind(this);
+
+    this.state = {
+      searchTerm: ''
+    };
+  }
+
+  handleSearchEdit (searchTerm) {
+    this.setState({
+      searchTerm
+    });
+  }
+
+  render () {
+    const { history } = this.props;
+    const { searchTerm } = this.state;
+    return (
+      <StyledFeedPage>
+        <NavBar history={history} searchTerm={searchTerm} onSearchTermEdit={this.handleSearchEdit} />
+        <Feed searchTerm={searchTerm} />
+      </StyledFeedPage>
+    );
+  }
+}
 
 export default FeedPage;

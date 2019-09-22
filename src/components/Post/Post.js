@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import TimeSinceDate from '../TimeSinceDate/TimeSinceDate';
 
 const StyledPostContainer = styled.div`
     width: 40vw;
@@ -14,7 +15,7 @@ const StyledPostContainer = styled.div`
 `;
 
 const StyledImg = styled.img`
-    width: 100%
+    width: 100%;
 `;
 
 class Post extends React.Component {
@@ -28,7 +29,7 @@ class Post extends React.Component {
 
     return (
       <StyledPostContainer>
-        <h4>{post.created_time}</h4>
+        <TimeSinceDate date={post.created_time} />
         <StyledImg src={post.full_picture} />
         <div>{post.story}</div>
         <div>{post.message}</div>

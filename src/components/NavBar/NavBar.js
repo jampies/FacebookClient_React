@@ -35,13 +35,13 @@ class NavBar extends React.Component {
   }
 
   render () {
-    const { history } = this.props;
+    const { history, searchTerm, onSearchTermEdit } = this.props;
     return (
       <StyledNavBarContainer>
         <AppName>Simple Facebook Client with Filter</AppName>
         {authService.isAuthenticated() &&
           <NavControls>
-            <input type='text' placeholder='filter these items' />
+            <input type='text' placeholder='filter these items' value={searchTerm} onChange={(e) => onSearchTermEdit(e.target.value)} />
             <LogoutButton history={history} />
           </NavControls>}
       </StyledNavBarContainer>

@@ -21,12 +21,6 @@ describe('Post component', () => {
     return shallow(<Post post={post} />);
   }
 
-  it('should render the date created', () => {
-    assert(component.text().includes('2019'));
-    assert(component.text().includes('30'));
-    assert(component.text().includes('07') || component.includes('Jul'));
-  });
-
   it('should render the message', () => {
     assert(component.text().includes('This is a message'));
   });
